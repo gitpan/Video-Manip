@@ -12,9 +12,9 @@ use base qw(Exporter);
 
 use Event::Manual;
 use Cool;
-use XML::Simple; #do this in findevent::manual or that here to avoid redundancy
 use FindEvent::Manual;
 use Data::Dumper;
+use XML::Simple; #do this in findevent::manual or that here to avoid redundancy
 
 sub new {
     my ($class, %args) = @_;

@@ -1,6 +1,11 @@
 
 use Event;
 package Event::Manual;
+
+use vars qw($VERSION, @EXPORT);
+$VERSION = 0.01;
+@EXPORT = qw(new endtime tag gettag matches);
+
 @ISA = qw(Event);
 
 sub new {

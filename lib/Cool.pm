@@ -3,6 +3,11 @@ package Cool;
 use strict;
 use Math::Round qw(nearest_ceil nearest_floor nearest);
 
+use vars qw($VERSION, @EXPORT);
+$VERSION = 0.01;
+@EXPORT = qw(new sum show zero compress truncate);
+
+
 sub new {
     my ($class, $resolution, $length) = @_;
     my $self = bless {}, ref($class) || $class;

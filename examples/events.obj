@@ -1,8 +1,0 @@
-$VAR1 = [
-          bless( {
-                   'time' => '0.389352',
-                   'probability' => 1,
-                   'envelope' => undef
-                 }, 'Event::Manual' )
-        ];
-

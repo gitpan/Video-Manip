@@ -1,5 +1,9 @@
 package FindEvent;
 
+use vars qw($VERSION, @EXPORTER);
+$VERSION = 0.01;
+@EXPORTER = qw(new configure foundevent);
+
 use strict;
 use Event;
 use Data::Dumper;

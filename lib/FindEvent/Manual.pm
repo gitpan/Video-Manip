@@ -1,5 +1,9 @@
 package FindEvent::Manual;
 
+use vars qw($VERSION @EXPORT);
+$VERSION = 0.01;
+@EXPORT = qw(new configure findevents);
+
 use base FindEvent;
 
 use strict;

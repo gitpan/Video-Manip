@@ -1,6 +1,10 @@
 
 package Event;
 
+use vars qw($VERSION @EXPORT);
+$VERSION=0.01;
+@EXPORT = qw(new setenvl buildcool);
+
 sub new {
     my ($class, $point, $identifier, $envelope, $probability, $type) = @_;
 

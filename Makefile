@@ -1,7 +1,7 @@
 # This Makefile is for the Video::Manip extension to perl.
 #
 # It was generated automatically by MakeMaker version
-# 6.03 (Revision: 1.6) from the contents of
+# 6.03 (Revision: 1.63) from the contents of
 # Makefile.PL. Don't edit this file, edit Makefile.PL instead.
 #
 #       ANY CHANGES MADE HERE WILL BE LOST!
@@ -10,7 +10,9 @@
 #
 #   MakeMaker Parameters:
 
+#     AUTHOR => q[Helen Cook (hvc@cpan.org)]
 #     NAME => q[Video::Manip]
+#     PREREQ_PM => { Data::Dumper=>q[0], Math::Round=>q[0], XML::Simple=>q[0], Time::HiRes=>q[0], Term::ReadKey=>q[0] }
 #     VERSION => q[0.01]
 
 # --- MakeMaker post_initialize section:
@@ -18,24 +20,24 @@
 
 # --- MakeMaker const_config section:
 
-# These definitions are from config.sh (via /usr/libdata/perl5/i386-openbsd/5.8.0/Config.pm)
+# These definitions are from config.sh (via /usr/lang/perl/5.8.0/lib/5.8.0/alpha-linux/Config.pm)
 
 # They may have been overridden via Makefile.PL or on the command line
 AR = ar
 CC = cc
-CCCDLFLAGS = -DPIC -fPIC 
-CCDLFLAGS = -Wl,-R/usr/libdata/perl5/i386-openbsd/5.8.0/CORE
+CCCDLFLAGS = -fpic
+CCDLFLAGS = -rdynamic
 DLEXT = so
 DLSRC = dl_dlopen.xs
 LD = cc
-LDDLFLAGS = -shared -fPIC 
-LDFLAGS = 
-LIBC = /usr/lib/libc.a
+LDDLFLAGS = -shared -L/usr/local/lib
+LDFLAGS =  -L/usr/local/lib
+LIBC = 
 LIB_EXT = .a
 OBJ_EXT = .o
-OSNAME = openbsd
-OSVERS = 3.2
-RANLIB = ranlib
+OSNAME = linux
+OSVERS = 2.2.14-6.0
+RANLIB = :
 SO = so
 EXE_EXT = 
 FULL_AR = /usr/bin/ar
@@ -54,30 +56,30 @@ INST_SCRIPT = blib/script
 INST_BIN = blib/bin
 INST_LIB = blib/lib
 INSTALLDIRS = site
-PREFIX = /usr
-SITEPREFIX = /usr/local
+PREFIX = /usr/lang/perl/5.8.0
+SITEPREFIX = /usr/lang/perl/5.8.0
 VENDORPREFIX = 
-INSTALLPRIVLIB = /usr/libdata/perl5
-INSTALLSITELIB = /usr/local/libdata/perl5/site_perl
+INSTALLPRIVLIB = /usr/lang/perl/5.8.0/lib/5.8.0
+INSTALLSITELIB = /usr/lang/perl/5.8.0/lib/site_perl/5.8.0
 INSTALLVENDORLIB = 
-INSTALLARCHLIB = /usr/libdata/perl5/i386-openbsd/5.8.0
-INSTALLSITEARCH = /usr/local/libdata/perl5/site_perl/i386-openbsd
+INSTALLARCHLIB = /usr/lang/perl/5.8.0/lib/5.8.0/alpha-linux
+INSTALLSITEARCH = /usr/lang/perl/5.8.0/lib/site_perl/5.8.0/alpha-linux
 INSTALLVENDORARCH = 
-INSTALLBIN = /usr/bin
-INSTALLSITEBIN = /usr/local/bin
+INSTALLBIN = /usr/lang/perl/5.8.0/bin
+INSTALLSITEBIN = /usr/lang/perl/5.8.0/bin
 INSTALLVENDORBIN = 
-INSTALLSCRIPT = /usr/bin
-PERL_LIB = /usr/libdata/perl5
-PERL_ARCHLIB = /usr/libdata/perl5/i386-openbsd/5.8.0
-SITELIBEXP = /usr/local/libdata/perl5/site_perl
-SITEARCHEXP = /usr/local/libdata/perl5/site_perl/i386-openbsd
+INSTALLSCRIPT = /usr/lang/perl/5.8.0/bin
+PERL_LIB = /usr/lang/perl/5.8.0/lib/5.8.0
+PERL_ARCHLIB = /usr/lang/perl/5.8.0/lib/5.8.0/alpha-linux
+SITELIBEXP = /usr/lang/perl/5.8.0/lib/site_perl/5.8.0
+SITEARCHEXP = /usr/lang/perl/5.8.0/lib/site_perl/5.8.0/alpha-linux
 LIBPERL_A = libperl.a
 FIRST_MAKEFILE = Makefile
 MAKE_APERL_FILE = Makefile.aperl
 PERLMAINCC = $(CC)
-PERL_INC = /usr/libdata/perl5/i386-openbsd/5.8.0/CORE
-PERL = /usr/bin/perl
-FULLPERL = /usr/bin/perl
+PERL_INC = /usr/lang/perl/5.8.0/lib/5.8.0/alpha-linux/CORE
+PERL = /usr/lang/perl/5.8.0/bin/perl
+FULLPERL = /usr/lang/perl/5.8.0/bin/perl
 PERLRUN = $(PERL)
 FULLPERLRUN = $(FULLPERL)
 PERLRUNINST = $(PERLRUN) "-I$(INST_ARCHLIB)" "-I$(INST_LIB)"
@@ -96,7 +98,7 @@ XS_VERSION_MACRO = XS_VERSION
 XS_DEFINE_VERSION = -D$(XS_VERSION_MACRO)=\"$(XS_VERSION)\"
 PERL_MALLOC_DEF = -DPERL_EXTMALLOC_DEF -Dmalloc=Perl_malloc -Dfree=Perl_mfree -Drealloc=Perl_realloc -Dcalloc=Perl_calloc
 
-MAKEMAKER = /usr/libdata/perl5/ExtUtils/MakeMaker.pm
+MAKEMAKER = /usr/lang/perl/5.8.0/lib/5.8.0/ExtUtils/MakeMaker.pm
 MM_VERSION = 6.03
 
 # FULLEXT = Pathname for extension directory (eg Foo/Bar/Oracle).
@@ -117,15 +119,15 @@ C_FILES =
 O_FILES = 
 H_FILES = 
 MAN1PODS = 
-MAN3PODS = lib/Event/Manual.pm
+MAN3PODS = 
 INST_MAN1DIR = blib/man1
 MAN1EXT = 1
-INSTALLMAN1DIR = none
-INSTALLSITEMAN1DIR = /usr/local/man/man$(MAN1EXT)
+INSTALLMAN1DIR = /usr/lang/perl/5.8.0/man/man1
+INSTALLSITEMAN1DIR = /usr/lang/perl/5.8.0/man/man$(MAN1EXT)
 INST_MAN3DIR = blib/man3
-MAN3EXT = 3p
-INSTALLMAN3DIR = none
-INSTALLSITEMAN3DIR = /usr/local/man/man$(MAN3EXT)
+MAN3EXT = 3
+INSTALLMAN3DIR = /usr/lang/perl/5.8.0/man/man3
+INSTALLSITEMAN3DIR = /usr/lang/perl/5.8.0/man/man$(MAN3EXT)
 PERM_RW = 644
 PERM_RWX = 755
 
@@ -318,33 +320,23 @@ config :: $(INST_ARCHAUTODIR)/.exists
 config :: $(INST_AUTODIR)/.exists
 	@$(NOOP)
 
-$(INST_AUTODIR)/.exists :: /usr/libdata/perl5/i386-openbsd/5.8.0/CORE/perl.h
+$(INST_AUTODIR)/.exists :: /usr/lang/perl/5.8.0/lib/5.8.0/alpha-linux/CORE/perl.h
 	@$(MKPATH) $(INST_AUTODIR)
-	@$(EQUALIZE_TIMESTAMP) /usr/libdata/perl5/i386-openbsd/5.8.0/CORE/perl.h $(INST_AUTODIR)/.exists
+	@$(EQUALIZE_TIMESTAMP) /usr/lang/perl/5.8.0/lib/5.8.0/alpha-linux/CORE/perl.h $(INST_AUTODIR)/.exists
 
 	-@$(CHMOD) $(PERM_RWX) $(INST_AUTODIR)
 
-$(INST_LIBDIR)/.exists :: /usr/libdata/perl5/i386-openbsd/5.8.0/CORE/perl.h
+$(INST_LIBDIR)/.exists :: /usr/lang/perl/5.8.0/lib/5.8.0/alpha-linux/CORE/perl.h
 	@$(MKPATH) $(INST_LIBDIR)
-	@$(EQUALIZE_TIMESTAMP) /usr/libdata/perl5/i386-openbsd/5.8.0/CORE/perl.h $(INST_LIBDIR)/.exists
+	@$(EQUALIZE_TIMESTAMP) /usr/lang/perl/5.8.0/lib/5.8.0/alpha-linux/CORE/perl.h $(INST_LIBDIR)/.exists
 
 	-@$(CHMOD) $(PERM_RWX) $(INST_LIBDIR)
 
-$(INST_ARCHAUTODIR)/.exists :: /usr/libdata/perl5/i386-openbsd/5.8.0/CORE/perl.h
+$(INST_ARCHAUTODIR)/.exists :: /usr/lang/perl/5.8.0/lib/5.8.0/alpha-linux/CORE/perl.h
 	@$(MKPATH) $(INST_ARCHAUTODIR)
-	@$(EQUALIZE_TIMESTAMP) /usr/libdata/perl5/i386-openbsd/5.8.0/CORE/perl.h $(INST_ARCHAUTODIR)/.exists
+	@$(EQUALIZE_TIMESTAMP) /usr/lang/perl/5.8.0/lib/5.8.0/alpha-linux/CORE/perl.h $(INST_ARCHAUTODIR)/.exists
 
 	-@$(CHMOD) $(PERM_RWX) $(INST_ARCHAUTODIR)
-
-config :: $(INST_MAN3DIR)/.exists
-	@$(NOOP)
-
-
-$(INST_MAN3DIR)/.exists :: /usr/libdata/perl5/i386-openbsd/5.8.0/CORE/perl.h
-	@$(MKPATH) $(INST_MAN3DIR)
-	@$(EQUALIZE_TIMESTAMP) /usr/libdata/perl5/i386-openbsd/5.8.0/CORE/perl.h $(INST_MAN3DIR)/.exists
-
-	-@$(CHMOD) $(PERM_RWX) $(INST_MAN3DIR)
 
 help:
 	perldoc ExtUtils::MakeMaker
@@ -389,17 +381,10 @@ static :: Makefile $(INST_STATIC)
 
 
 # --- MakeMaker manifypods section:
-POD2MAN_EXE = /usr/bin/pod2man
-POD2MAN = $(PERL) -we '%m=@ARGV;for (keys %m){' \
--e 'next if -e $$m{$$_} && -M $$m{$$_} < -M $$_ && -M $$m{$$_} < -M "Makefile";' \
--e 'print "Manifying $$m{$$_}\n";' \
--e 'system(q[$(PERLRUN) $(POD2MAN_EXE) ].qq[$$_>$$m{$$_}])==0 or warn "Couldn\047t install $$m{$$_}\n";' \
--e 'chmod(oct($(PERM_RW)), $$m{$$_}) or warn "chmod $(PERM_RW) $$m{$$_}: $$!\n";}'
 
-manifypods : pure_all lib/Event/Manual.pm
-	@$(POD2MAN) \
-	lib/Event/Manual.pm \
-	$(INST_MAN3DIR)/Event::Manual.$(MAN3EXT)
+manifypods : pure_all
+	@$(NOOP)
+
 
 # --- MakeMaker processPL section:
 
@@ -630,7 +615,7 @@ Makefile : Makefile.PL $(CONFIGDEP)
 
 # --- MakeMaker makeaperl section ---
 MAP_TARGET    = perl
-FULLPERL      = /usr/bin/perl
+FULLPERL      = /usr/lang/perl/5.8.0/bin/perl
 
 $(MAP_TARGET) :: static $(MAKE_APERL_FILE)
 	$(MAKE) -f $(MAKE_APERL_FILE) $@
@@ -670,9 +655,9 @@ testdb_static :: testdb_dynamic
 # --- MakeMaker ppd section:
 # Creates a PPD (Perl Package Description) for a binary distribution.
 ppd:
-	@$(PERL) -e "print qq{<SOFTPKG NAME=\"$(DISTNAME)\" VERSION=\"0,01,0,0\">\n\t<TITLE>$(DISTNAME)</TITLE>\n\t<ABSTRACT></ABSTRACT>\n\t<AUTHOR></AUTHOR>\n}" > $(DISTNAME).ppd
-	@$(PERL) -e "print qq{\t<IMPLEMENTATION>\n}" >> $(DISTNAME).ppd
-	@$(PERL) -e "print qq{\t\t<OS NAME=\"$(OSNAME)\" />\n\t\t<ARCHITECTURE NAME=\"i386-openbsd\" />\n\t\t<CODEBASE HREF=\"\" />\n\t</IMPLEMENTATION>\n</SOFTPKG>\n}" >> $(DISTNAME).ppd
+	@$(PERL) -e "print qq{<SOFTPKG NAME=\"$(DISTNAME)\" VERSION=\"0,01,0,0\">\n\t<TITLE>$(DISTNAME)</TITLE>\n\t<ABSTRACT></ABSTRACT>\n\t<AUTHOR>Helen Cook (hvc\@cpan.org)</AUTHOR>\n}" > $(DISTNAME).ppd
+	@$(PERL) -e "print qq{\t<IMPLEMENTATION>\n\t\t<DEPENDENCY NAME=\"Data-Dumper\" VERSION=\"0,0,0,0\" />\n\t\t<DEPENDENCY NAME=\"Math-Round\" VERSION=\"0,0,0,0\" />\n\t\t<DEPENDENCY NAME=\"Term-ReadKey\" VERSION=\"0,0,0,0\" />\n\t\t<DEPENDENCY NAME=\"Time-HiRes\" VERSION=\"0,0,0,0\" />\n\t\t<DEPENDENCY NAME=\"XML-Simple\" VERSION=\"0,0,0,0\" />\n}" >> $(DISTNAME).ppd
+	@$(PERL) -e "print qq{\t\t<OS NAME=\"$(OSNAME)\" />\n\t\t<ARCHITECTURE NAME=\"alpha-linux\" />\n\t\t<CODEBASE HREF=\"\" />\n\t</IMPLEMENTATION>\n</SOFTPKG>\n}" >> $(DISTNAME).ppd
 
 # --- MakeMaker pm_to_blib section:
 
