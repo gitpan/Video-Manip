@@ -10,9 +10,9 @@ use base qw(Exporter);
 @EXPORT_OK = qw(check getbdys buildcool match redefineenvl reconsevents selectframes);
 %EXPORT_TAGS = ( all => [@EXPORT_OK] );
 
-use Event::Manual;
-use Cool;
-use FindEvent::Manual;
+use Video::Event::Manual;
+use Video::Function;
+use Video::FindEvent::Manual;
 use Data::Dumper;
 use XML::Simple; #do this in findevent::manual or that here to avoid redundancy
 
@@ -60,12 +60,12 @@ sub new {
 }
 
 sub check {
-    # verify FindEvent::* modules load without errors
+    # verify Video::FindEvent::* modules load without errors
     my ($self, $algorithms) = @_;
     ref($algorithms) eq 'HASH' 
         or die __PACKAGE__ . ": error in algorithms hash";
     foreach my $algo (keys %$algorithms) {
-        my $module = "FindEvent::" . $algo;
+        my $module = "Video::FindEvent::" . $algo;
         check_h($module);
     }
     return 1;
@@ -92,7 +92,7 @@ sub use {
         }
     
         #make sure all is good with module, then require it
-        my $module = "FindEvent::" . $algo;
+        my $module = "Video::FindEvent::" . $algo;
         check_h($module);
         eval { eval "require $module" } or die __PACKAGE__ . ": poof";
 
@@ -155,7 +155,7 @@ sub buildcool {
     my $resolution = $self->{'resolution'}; 
     my $desiredlength = $self->{'desiredlength'};
 
-    my $cool = new Cool($resolution, $length);
+    my $cool = new Video::Function($resolution, $length);
     foreach my $event (@events) {
         if ($searchterm eq '-all') {
             $cool = $event->buildcool($cool, $length);
@@ -227,7 +227,7 @@ sub redefineenvl {
                        contentkey => '-command',
                        keeproot => 0,
                       );
-    $config = FindEvent::Manual::abusexml($config);
+    $config = Video::FindEvent::Manual::abusexml($config);
     
 
     foreach my $event (@events) {

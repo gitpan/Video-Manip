@@ -1,14 +1,14 @@
-package FindEvent::Manual;
+package Video::FindEvent::Manual;
 
 use vars qw($VERSION @EXPORT);
 $VERSION = 0.01;
 @EXPORT = qw(new configure findevents);
 
-use base FindEvent;
+use base Video::FindEvent;
 
 use strict;
 
-use Event::Manual;
+use Video::Event::Manual;
 use Term::ReadKey;
 use Time::HiRes qw(gettimeofday tv_interval);
 use Data::Dumper;
@@ -98,7 +98,7 @@ sub findevents {
                 print "endtime here is $event->{'endtime'}\n";
             }
             
-	        my $event = Event::Manual->new($eventtime, $self->{'eventkeys'}{$key}{'envl'}, $probability, $self->{'eventkeys'}{$key}{'type'}, $self->{'eventkeys'}{$key}{'name'});
+	        my $event = Video::Event::Manual->new($eventtime, $self->{'eventkeys'}{$key}{'envl'}, $probability, $self->{'eventkeys'}{$key}{'type'}, $self->{'eventkeys'}{$key}{'name'});
             push @events, $event;
             $continue = 0;
         }
@@ -134,7 +134,7 @@ sub findevents {
         
         elsif (defined $self->{'eventkeys'}{$key}) {
             my $name = $self->{'eventkeys'}{$key}{'name'};
-	        my $event = Event::Manual->new($eventtime, $self->{'eventkeys'}{$key}{'envl'}, $probability, $self->{'eventkeys'}{$key}{'type'}, $self->{'eventkeys'}{$key}{'name'});
+	        my $event = Video::Event::Manual->new($eventtime, $self->{'eventkeys'}{$key}{'envl'}, $probability, $self->{'eventkeys'}{$key}{'type'}, $self->{'eventkeys'}{$key}{'name'});
 	        push @events, $event;
     	    print $event->{'name'}." at ".$event->{'time'}."\n";
             if ($event->{'type'} eq "long") {

@@ -1,12 +1,11 @@
-package Cool;
+package Video::Function;
 
-use strict;
-use Math::Round qw(nearest_ceil nearest_floor nearest);
-
-use vars qw($VERSION, @EXPORT);
+use vars qw($VERSION @EXPORT);
 $VERSION = 0.01;
 @EXPORT = qw(new sum show zero compress truncate);
 
+use strict;
+use Math::Round qw(nearest_ceil nearest_floor nearest);
 
 sub new {
     my ($class, $resolution, $length) = @_;

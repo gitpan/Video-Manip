@@ -2,7 +2,7 @@ use ExtUtils::MakeMaker;
 WriteMakefile
 AUTHOR => 'Helen Cook (hvc@cpan.org)',
 NAME=>"Video::Manip",
-VERSION=>0.01,
+VERSION=>0.03,
 PREREQ_PM => {
     'Math::Round' => '0',
     'Data::Dumper' => '0',

@@ -1,11 +1,11 @@
-package FindEvent;
+package Video::FindEvent;
 
-use vars qw($VERSION, @EXPORTER);
+use vars qw($VERSION @EXPORTER);
 $VERSION = 0.01;
 @EXPORTER = qw(new configure foundevent);
 
 use strict;
-use Event;
+use Video::Event;
 use Data::Dumper;
 
 sub new {

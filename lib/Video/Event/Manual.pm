@@ -1,12 +1,10 @@
+package Video::Event::Manual;
 
-use Event;
-package Event::Manual;
-
-use vars qw($VERSION, @EXPORT);
+use vars qw($VERSION @EXPORT);
 $VERSION = 0.01;
 @EXPORT = qw(new endtime tag gettag matches);
 
-@ISA = qw(Event);
+use base Video::Event;
 
 sub new {
     my ($class, $time, $envelope, $probability, $type, $name) = @_;

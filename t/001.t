@@ -1,5 +1,6 @@
 #!/usr/bin/perl
 
+use lib "../lib";
 use strict;
 use Test::Simple tests => 1;
 

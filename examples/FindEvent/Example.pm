@@ -1,6 +1,6 @@
-package FindEvent::Field;
+package Video::FindEvent::Field;
 
-use base FindEvent;
+use base Video::FindEvent;
 use strict;
 
 sub findevents {

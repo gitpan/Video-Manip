@@ -1,5 +1,4 @@
-
-package Event;
+package Video::Event;
 
 use vars qw($VERSION @EXPORT);
 $VERSION=0.01;

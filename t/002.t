@@ -1,4 +1,5 @@
 #!/usr/bin/perl
+use lib "../lib";
 use strict;
 use Test::Simple tests => 2;
 use Video::Manip;
